@@ -4,12 +4,11 @@ orbs:
   python: circleci/python@0.2.1
 
 jobs:
-  build-and-test:
-    # Step 1: obtain repo from GitHub
-    - checkout
-    
+  build-and-test: 
     executor: python/default
     steps:
+      - checkout
+      
       - run:
           # directory where steps are run
           working_directory: ~/quiz/src
