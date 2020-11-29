@@ -5,11 +5,14 @@ orbs:
 
 jobs:
   build-and-test:
+    # Step 1: obtain repo from GitHub
+    - checkout
+    
     executor: python/default
     steps:
       - run:
           # directory where steps are run
-          working_directory: ~/src
+          working_directory: ~/quiz/src
           command: python -m unittest discover test -v 
           name: Test
 
