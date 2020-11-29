@@ -10,7 +10,7 @@ jobs:
       - run:
           # directory where steps are run
           working_directory: ~/src
-          command: python -m unittest discover test -v 
+          command: python -m unittest discover -v 
           name: Test
 
 workflows:
