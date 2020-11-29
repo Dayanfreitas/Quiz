@@ -9,7 +9,7 @@ jobs:
     steps:
       - run:
           # directory where steps are run
-          working_directory: ~/src
+          #working_directory: ~/src
           command: python -m unittest discover -v 
           name: Test
 
