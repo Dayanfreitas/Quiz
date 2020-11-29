@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  python: circleci/python@0.2.1
+  python: circleci/python@0.2.7
 
 jobs:
   build-and-test:
@@ -12,10 +12,5 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          command: ./manage.py test
+          command: python -m unittest discover test -v
           name: Test
-
-workflows:
-  main:
-    jobs:
-      - build-and-test
