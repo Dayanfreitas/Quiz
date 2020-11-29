@@ -7,11 +7,10 @@ jobs:
   build-and-test:
     executor: python/default
     steps:
-      working_directory: ~/src
       - run:
           # directory where steps are run
-
-          command: ./manage.py test
+          working_directory: ~/src
+          command: python -m unittest discover test -v 
           name: Test
 
 workflows:
