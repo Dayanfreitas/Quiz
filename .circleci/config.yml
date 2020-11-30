@@ -9,13 +9,18 @@ jobs:
   #     - image: circleci/python:3.6.4
   build-and-test: 
     executor: python/default
-
-    working_directory: ~/repo/src
+    working_directory: ~/repo
+    
     steps:
-      - checkout  
+      - checkout
+
       - run:
-          command: python -m unittest discover test -v 
-          name: Test
+          command: echo pwd 
+          name: dir
+
+      - run:
+        command: python -m unittest discover test -v 
+        name: Testes Unitários
 
 workflows:
   main:
