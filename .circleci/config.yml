@@ -4,11 +4,9 @@ orbs:
   python: circleci/python@0.2.1
 
 jobs:
-  # build:
-  #   docker:
-  #     - image: circleci/python:3.6.4
-
-  #       working_directory: ~/repo  
+  build:
+    docker:
+      - image: circleci/python:3.6.4
   build-and-test: 
     executor: python/default
 
