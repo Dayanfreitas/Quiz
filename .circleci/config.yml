@@ -4,18 +4,24 @@ orbs:
   python: circleci/python@0.2.1
 
 jobs:
-  build-and-test: 
-    executor: python/default
-    steps:
-      - checkout
-      
-      - run:
-          working_directory: ~/src/
+  build:
+    docker:
+      - image: circleci/python:3.6.4
 
-          command: python -m unittest discover test -v 
-          name: Test
+        working_directory: ~/repo
+    # steps:
+    #   - run echo 
+  # build-and-test: 
+  #   executor: python/default
 
-workflows:
-  main:
-    jobs:
-      - build-and-test
+  #   working_directory: ~/repo
+  #   steps:
+  #     - checkout  
+  #     - run:
+  #         command: python -m unittest discover test -v 
+  #         name: Test
+
+# workflows:
+#   main:
+#     jobs:
+#       - build
