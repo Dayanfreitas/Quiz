@@ -2,7 +2,7 @@ version: 2.1
 parameters:
   workingdir:
     type: string
-    default: "~/repo"
+    default: "~/src"
 
 orbs:
   python: circleci/python@0.2.1
@@ -14,7 +14,7 @@ jobs:
     working_directory: << pipeline.parameters.workingdir >>
     steps:
       - checkout
-      - run: echo "$(pwd)" 
+      - run: echo "$(pwd) == << pipeline.parameters.workingdir >>" 
 
       # - run:
       #   command: python -m unittest discover test -v 
